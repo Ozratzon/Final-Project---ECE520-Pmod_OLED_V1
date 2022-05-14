@@ -1,0 +1,2479 @@
+22:11:08 INFO  : Launching XSCT server: xsct -n  -interactive /home/ozratzon/test_software/temp_xsdb_launch_script.tcl
+22:11:08 INFO  : Platform repository initialization has completed.
+22:11:09 INFO  : Registering command handlers for Vitis TCF services
+22:11:12 INFO  : XSCT server has started successfully.
+22:11:13 INFO  : Successfully done setting XSCT server connection channel  
+22:11:13 INFO  : plnx-install-location is set to ''
+22:11:13 INFO  : Successfully done query RDI_DATADIR 
+22:11:13 INFO  : Successfully done setting workspace for the tool. 
+22:12:17 INFO  : Result from executing command 'getProjects': OLED_Design_wrapper
+22:12:17 INFO  : Result from executing command 'getPlatforms': 
+22:12:17 WARN  : An unexpected exception occurred in the module 'platform project logging'
+22:12:17 INFO  : Platform 'OLED_Design_wrapper' is added to custom repositories.
+22:12:25 INFO  : Platform 'OLED_Design_wrapper' is added to custom repositories.
+22:15:01 INFO  : Result from executing command 'getProjects': OLED_Design_wrapper
+22:15:01 INFO  : Result from executing command 'getPlatforms': OLED_Design_wrapper|/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/OLED_Design_wrapper.xpfm
+22:15:04 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:15:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:15:22 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+22:15:22 INFO  : 'jtag frequency' command is executed.
+22:15:22 INFO  : Context for 'APU' is selected.
+22:15:22 INFO  : System reset is completed.
+22:15:25 INFO  : 'after 3000' command is executed.
+22:15:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+22:15:27 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+22:15:27 INFO  : Context for 'APU' is selected.
+22:15:27 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+22:15:27 INFO  : 'configparams force-mem-access 1' command is executed.
+22:15:27 INFO  : Context for 'APU' is selected.
+22:15:27 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+22:15:27 INFO  : 'ps7_init' command is executed.
+22:15:27 INFO  : 'ps7_post_config' command is executed.
+22:15:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:15:27 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:15:27 INFO  : 'configparams force-mem-access 0' command is executed.
+22:15:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:15:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:15:27 INFO  : 'con' command is executed.
+22:15:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:15:27 INFO  : Disconnected from the channel tcfchan#2.
+22:17:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:17:30 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+22:17:30 INFO  : 'jtag frequency' command is executed.
+22:17:30 INFO  : Context for 'APU' is selected.
+22:17:30 INFO  : System reset is completed.
+22:17:33 INFO  : 'after 3000' command is executed.
+22:17:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+22:17:34 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+22:17:34 INFO  : Context for 'APU' is selected.
+22:17:34 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+22:17:34 INFO  : 'configparams force-mem-access 1' command is executed.
+22:17:34 INFO  : Context for 'APU' is selected.
+22:17:34 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+22:17:35 INFO  : 'ps7_init' command is executed.
+22:17:35 INFO  : 'ps7_post_config' command is executed.
+22:17:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:17:35 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:17:35 INFO  : 'configparams force-mem-access 0' command is executed.
+22:17:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:17:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:17:35 INFO  : 'con' command is executed.
+22:17:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:17:35 INFO  : Disconnected from the channel tcfchan#3.
+22:28:47 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:29:09 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:29:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:29:16 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+22:29:16 INFO  : 'jtag frequency' command is executed.
+22:29:16 INFO  : Context for 'APU' is selected.
+22:29:16 INFO  : System reset is completed.
+22:29:19 INFO  : 'after 3000' command is executed.
+22:29:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+22:29:20 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+22:29:20 INFO  : Context for 'APU' is selected.
+22:29:20 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+22:29:20 INFO  : 'configparams force-mem-access 1' command is executed.
+22:29:20 INFO  : Context for 'APU' is selected.
+22:29:20 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+22:29:20 INFO  : 'ps7_init' command is executed.
+22:29:20 INFO  : 'ps7_post_config' command is executed.
+22:29:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:29:20 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:29:20 INFO  : 'configparams force-mem-access 0' command is executed.
+22:29:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:29:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:29:21 INFO  : 'con' command is executed.
+22:29:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:29:21 INFO  : Disconnected from the channel tcfchan#4.
+22:30:10 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:41:31 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:41:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:41:41 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+22:41:41 INFO  : 'jtag frequency' command is executed.
+22:41:41 INFO  : Context for 'APU' is selected.
+22:41:41 INFO  : System reset is completed.
+22:41:44 INFO  : 'after 3000' command is executed.
+22:41:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+22:41:45 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+22:41:45 INFO  : Context for 'APU' is selected.
+22:41:45 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+22:41:45 INFO  : 'configparams force-mem-access 1' command is executed.
+22:41:45 INFO  : Context for 'APU' is selected.
+22:41:45 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+22:41:45 INFO  : 'ps7_init' command is executed.
+22:41:45 INFO  : 'ps7_post_config' command is executed.
+22:41:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:41:45 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:41:45 INFO  : 'configparams force-mem-access 0' command is executed.
+22:41:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:41:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:41:45 INFO  : 'con' command is executed.
+22:41:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:41:45 INFO  : Disconnected from the channel tcfchan#5.
+22:47:39 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:47:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:47:45 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+22:47:45 INFO  : 'jtag frequency' command is executed.
+22:47:45 INFO  : Context for 'APU' is selected.
+22:47:45 INFO  : System reset is completed.
+22:47:48 INFO  : 'after 3000' command is executed.
+22:47:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+22:47:49 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+22:47:49 INFO  : Context for 'APU' is selected.
+22:47:49 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+22:47:49 INFO  : 'configparams force-mem-access 1' command is executed.
+22:47:49 INFO  : Context for 'APU' is selected.
+22:47:49 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+22:47:50 INFO  : 'ps7_init' command is executed.
+22:47:50 INFO  : 'ps7_post_config' command is executed.
+22:47:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:50 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:47:50 INFO  : 'configparams force-mem-access 0' command is executed.
+22:47:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:47:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:50 INFO  : 'con' command is executed.
+22:47:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:47:50 INFO  : Disconnected from the channel tcfchan#6.
+22:49:47 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:54:18 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:56:26 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:56:45 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:56:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:56:58 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+22:56:58 INFO  : 'jtag frequency' command is executed.
+22:56:58 INFO  : Context for 'APU' is selected.
+22:56:58 INFO  : System reset is completed.
+22:57:01 INFO  : 'after 3000' command is executed.
+22:57:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+22:57:02 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+22:57:03 INFO  : Context for 'APU' is selected.
+22:57:03 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+22:57:03 INFO  : 'configparams force-mem-access 1' command is executed.
+22:57:03 INFO  : Context for 'APU' is selected.
+22:57:03 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+22:57:03 INFO  : 'ps7_init' command is executed.
+22:57:03 INFO  : 'ps7_post_config' command is executed.
+22:57:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:57:03 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:57:03 INFO  : 'configparams force-mem-access 0' command is executed.
+22:57:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:57:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:57:03 INFO  : 'con' command is executed.
+22:57:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:57:03 INFO  : Disconnected from the channel tcfchan#7.
+22:57:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:57:57 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+22:57:57 INFO  : 'jtag frequency' command is executed.
+22:57:57 INFO  : Context for 'APU' is selected.
+22:57:58 INFO  : System reset is completed.
+22:58:01 INFO  : 'after 3000' command is executed.
+22:58:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+22:58:02 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+22:58:02 INFO  : Context for 'APU' is selected.
+22:58:02 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+22:58:02 INFO  : 'configparams force-mem-access 1' command is executed.
+22:58:02 INFO  : Context for 'APU' is selected.
+22:58:02 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+22:58:02 INFO  : 'ps7_init' command is executed.
+22:58:02 INFO  : 'ps7_post_config' command is executed.
+22:58:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:58:02 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:58:02 INFO  : 'configparams force-mem-access 0' command is executed.
+22:58:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:58:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:58:02 INFO  : 'con' command is executed.
+22:58:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:58:02 INFO  : Disconnected from the channel tcfchan#8.
+22:59:26 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+22:59:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:59:31 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+22:59:31 INFO  : 'jtag frequency' command is executed.
+22:59:31 INFO  : Context for 'APU' is selected.
+22:59:31 INFO  : System reset is completed.
+22:59:34 INFO  : 'after 3000' command is executed.
+22:59:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+22:59:36 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+22:59:36 INFO  : Context for 'APU' is selected.
+22:59:36 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+22:59:36 INFO  : 'configparams force-mem-access 1' command is executed.
+22:59:36 INFO  : Context for 'APU' is selected.
+22:59:36 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+22:59:36 INFO  : 'ps7_init' command is executed.
+22:59:36 INFO  : 'ps7_post_config' command is executed.
+22:59:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:59:36 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:59:36 INFO  : 'configparams force-mem-access 0' command is executed.
+22:59:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:59:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:59:36 INFO  : 'con' command is executed.
+22:59:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:59:36 INFO  : Disconnected from the channel tcfchan#9.
+23:17:10 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:17:53 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:45:42 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:45:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:45:46 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+23:45:46 INFO  : 'jtag frequency' command is executed.
+23:45:46 INFO  : Context for 'APU' is selected.
+23:45:46 INFO  : System reset is completed.
+23:45:49 INFO  : 'after 3000' command is executed.
+23:45:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+23:45:50 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+23:45:51 INFO  : Context for 'APU' is selected.
+23:45:51 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+23:45:51 INFO  : 'configparams force-mem-access 1' command is executed.
+23:45:51 INFO  : Context for 'APU' is selected.
+23:45:51 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+23:45:51 INFO  : 'ps7_init' command is executed.
+23:45:51 INFO  : 'ps7_post_config' command is executed.
+23:45:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:45:51 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:45:51 INFO  : 'configparams force-mem-access 0' command is executed.
+23:45:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:45:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:45:51 INFO  : 'con' command is executed.
+23:45:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:45:51 INFO  : Disconnected from the channel tcfchan#10.
+23:46:40 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:46:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:46:44 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+23:46:44 INFO  : 'jtag frequency' command is executed.
+23:46:44 INFO  : Context for 'APU' is selected.
+23:46:44 INFO  : System reset is completed.
+23:46:47 INFO  : 'after 3000' command is executed.
+23:46:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+23:46:48 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+23:46:48 INFO  : Context for 'APU' is selected.
+23:46:48 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+23:46:48 INFO  : 'configparams force-mem-access 1' command is executed.
+23:46:48 INFO  : Context for 'APU' is selected.
+23:46:48 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+23:46:49 INFO  : 'ps7_init' command is executed.
+23:46:49 INFO  : 'ps7_post_config' command is executed.
+23:46:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:46:49 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:46:49 INFO  : 'configparams force-mem-access 0' command is executed.
+23:46:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:46:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:46:49 INFO  : 'con' command is executed.
+23:46:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:46:49 INFO  : Disconnected from the channel tcfchan#11.
+23:47:27 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:47:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:47:31 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+23:47:31 INFO  : 'jtag frequency' command is executed.
+23:47:31 INFO  : Context for 'APU' is selected.
+23:47:31 INFO  : System reset is completed.
+23:47:34 INFO  : 'after 3000' command is executed.
+23:47:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+23:47:35 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+23:47:35 INFO  : Context for 'APU' is selected.
+23:47:35 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+23:47:35 INFO  : 'configparams force-mem-access 1' command is executed.
+23:47:35 INFO  : Context for 'APU' is selected.
+23:47:35 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+23:47:35 INFO  : 'ps7_init' command is executed.
+23:47:35 INFO  : 'ps7_post_config' command is executed.
+23:47:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:47:35 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:47:35 INFO  : 'configparams force-mem-access 0' command is executed.
+23:47:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:47:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:47:36 INFO  : 'con' command is executed.
+23:47:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:47:36 INFO  : Disconnected from the channel tcfchan#12.
+23:48:43 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:48:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:48:47 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+23:48:47 INFO  : 'jtag frequency' command is executed.
+23:48:47 INFO  : Context for 'APU' is selected.
+23:48:47 INFO  : System reset is completed.
+23:48:50 INFO  : 'after 3000' command is executed.
+23:48:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+23:48:51 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+23:48:51 INFO  : Context for 'APU' is selected.
+23:48:51 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+23:48:52 INFO  : 'configparams force-mem-access 1' command is executed.
+23:48:52 INFO  : Context for 'APU' is selected.
+23:48:52 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+23:48:52 INFO  : 'ps7_init' command is executed.
+23:48:52 INFO  : 'ps7_post_config' command is executed.
+23:48:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:48:52 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:48:52 INFO  : 'configparams force-mem-access 0' command is executed.
+23:48:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:48:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:48:52 INFO  : 'con' command is executed.
+23:48:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:48:52 INFO  : Disconnected from the channel tcfchan#13.
+23:50:33 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:51:06 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:51:20 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+23:51:48 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:14:32 INFO  : Result from executing command 'getProjects': OLED_Design_wrapper
+00:14:32 INFO  : Result from executing command 'getPlatforms': OLED_Design_wrapper|/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/OLED_Design_wrapper.xpfm
+00:14:35 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:14:49 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:14:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:14:55 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+00:14:55 INFO  : 'jtag frequency' command is executed.
+00:14:55 INFO  : Context for 'APU' is selected.
+00:14:55 INFO  : System reset is completed.
+00:14:58 INFO  : 'after 3000' command is executed.
+00:14:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+00:15:00 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+00:15:00 INFO  : Context for 'APU' is selected.
+00:15:00 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+00:15:00 INFO  : 'configparams force-mem-access 1' command is executed.
+00:15:00 INFO  : Context for 'APU' is selected.
+00:15:00 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+00:15:00 INFO  : 'ps7_init' command is executed.
+00:15:00 INFO  : 'ps7_post_config' command is executed.
+00:15:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:15:00 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:15:00 INFO  : 'configparams force-mem-access 0' command is executed.
+00:15:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:15:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:15:00 INFO  : 'con' command is executed.
+00:15:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:15:00 INFO  : Disconnected from the channel tcfchan#15.
+00:15:55 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:17:33 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:17:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:17:36 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+00:17:36 INFO  : 'jtag frequency' command is executed.
+00:17:36 INFO  : Context for 'APU' is selected.
+00:17:36 INFO  : System reset is completed.
+00:17:39 INFO  : 'after 3000' command is executed.
+00:17:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+00:17:40 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+00:17:40 INFO  : Context for 'APU' is selected.
+00:17:40 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+00:17:40 INFO  : 'configparams force-mem-access 1' command is executed.
+00:17:40 INFO  : Context for 'APU' is selected.
+00:17:40 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+00:17:41 INFO  : 'ps7_init' command is executed.
+00:17:41 INFO  : 'ps7_post_config' command is executed.
+00:17:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:17:41 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:17:41 INFO  : 'configparams force-mem-access 0' command is executed.
+00:17:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:17:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:17:41 INFO  : 'con' command is executed.
+00:17:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:17:41 INFO  : Disconnected from the channel tcfchan#16.
+00:18:45 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:18:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:18:49 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+00:18:49 INFO  : 'jtag frequency' command is executed.
+00:18:49 INFO  : Context for 'APU' is selected.
+00:18:50 INFO  : System reset is completed.
+00:18:53 INFO  : 'after 3000' command is executed.
+00:18:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+00:18:54 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+00:18:54 INFO  : Context for 'APU' is selected.
+00:18:54 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+00:18:54 INFO  : 'configparams force-mem-access 1' command is executed.
+00:18:54 INFO  : Context for 'APU' is selected.
+00:18:54 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+00:18:54 INFO  : 'ps7_init' command is executed.
+00:18:54 INFO  : 'ps7_post_config' command is executed.
+00:18:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:18:54 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:18:54 INFO  : 'configparams force-mem-access 0' command is executed.
+00:18:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:18:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:18:54 INFO  : 'con' command is executed.
+00:18:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:18:54 INFO  : Disconnected from the channel tcfchan#17.
+00:35:11 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:35:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:35:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+00:35:14 INFO  : 'jtag frequency' command is executed.
+00:35:14 INFO  : Context for 'APU' is selected.
+00:35:14 INFO  : System reset is completed.
+00:35:17 INFO  : 'after 3000' command is executed.
+00:35:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+00:35:18 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+00:35:18 INFO  : Context for 'APU' is selected.
+00:35:18 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+00:35:18 INFO  : 'configparams force-mem-access 1' command is executed.
+00:35:18 INFO  : Context for 'APU' is selected.
+00:35:18 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+00:35:18 INFO  : 'ps7_init' command is executed.
+00:35:18 INFO  : 'ps7_post_config' command is executed.
+00:35:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:35:19 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:35:19 INFO  : 'configparams force-mem-access 0' command is executed.
+00:35:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:35:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:35:19 INFO  : 'con' command is executed.
+00:35:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:35:19 INFO  : Disconnected from the channel tcfchan#18.
+00:36:30 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:36:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:36:33 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+00:36:33 INFO  : 'jtag frequency' command is executed.
+00:36:33 INFO  : Context for 'APU' is selected.
+00:36:33 INFO  : System reset is completed.
+00:36:36 INFO  : 'after 3000' command is executed.
+00:36:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+00:36:37 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+00:36:37 INFO  : Context for 'APU' is selected.
+00:36:37 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+00:36:37 INFO  : 'configparams force-mem-access 1' command is executed.
+00:36:37 INFO  : Context for 'APU' is selected.
+00:36:37 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+00:36:37 INFO  : 'ps7_init' command is executed.
+00:36:37 INFO  : 'ps7_post_config' command is executed.
+00:36:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:36:37 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:36:37 INFO  : 'configparams force-mem-access 0' command is executed.
+00:36:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:36:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:36:37 INFO  : 'con' command is executed.
+00:36:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:36:37 INFO  : Disconnected from the channel tcfchan#19.
+00:46:06 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:47:48 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:48:48 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:48:55 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:49:38 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+00:55:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:55:48 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+00:55:48 INFO  : 'jtag frequency' command is executed.
+00:55:48 INFO  : Context for 'APU' is selected.
+00:55:48 INFO  : System reset is completed.
+00:55:51 INFO  : 'after 3000' command is executed.
+00:55:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+00:55:53 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+00:55:53 INFO  : Context for 'APU' is selected.
+00:55:53 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+00:55:53 INFO  : 'configparams force-mem-access 1' command is executed.
+00:55:53 INFO  : Context for 'APU' is selected.
+00:55:53 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+00:55:53 INFO  : 'ps7_init' command is executed.
+00:55:53 INFO  : 'ps7_post_config' command is executed.
+00:55:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:55:53 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:55:53 INFO  : 'configparams force-mem-access 0' command is executed.
+00:55:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:55:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:55:53 INFO  : 'con' command is executed.
+00:55:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:55:53 INFO  : Disconnected from the channel tcfchan#20.
+00:56:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:56:49 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+00:56:49 INFO  : 'jtag frequency' command is executed.
+00:56:49 INFO  : Context for 'APU' is selected.
+00:56:49 INFO  : System reset is completed.
+00:56:52 INFO  : 'after 3000' command is executed.
+00:56:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+00:56:54 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+00:56:54 INFO  : Context for 'APU' is selected.
+00:56:54 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+00:56:54 INFO  : 'configparams force-mem-access 1' command is executed.
+00:56:54 INFO  : Context for 'APU' is selected.
+00:56:54 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+00:56:54 INFO  : 'ps7_init' command is executed.
+00:56:54 INFO  : 'ps7_post_config' command is executed.
+00:56:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:56:54 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:56:54 INFO  : 'configparams force-mem-access 0' command is executed.
+00:56:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:56:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:56:54 INFO  : 'con' command is executed.
+00:56:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:56:54 INFO  : Disconnected from the channel tcfchan#21.
+01:00:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:00:07 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:00:07 INFO  : 'jtag frequency' command is executed.
+01:00:07 INFO  : Context for 'APU' is selected.
+01:00:07 INFO  : System reset is completed.
+01:00:10 INFO  : 'after 3000' command is executed.
+01:00:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:00:11 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:00:11 INFO  : Context for 'APU' is selected.
+01:00:11 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:00:11 INFO  : 'configparams force-mem-access 1' command is executed.
+01:00:11 INFO  : Context for 'APU' is selected.
+01:00:11 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:00:11 INFO  : 'ps7_init' command is executed.
+01:00:11 INFO  : 'ps7_post_config' command is executed.
+01:00:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:00:12 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:00:12 INFO  : 'configparams force-mem-access 0' command is executed.
+01:00:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:00:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:00:12 INFO  : 'con' command is executed.
+01:00:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:00:12 INFO  : Disconnected from the channel tcfchan#22.
+01:03:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:03:02 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:03:02 INFO  : 'jtag frequency' command is executed.
+01:03:02 INFO  : Context for 'APU' is selected.
+01:03:02 INFO  : System reset is completed.
+01:03:05 INFO  : 'after 3000' command is executed.
+01:03:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:03:06 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:03:06 INFO  : Context for 'APU' is selected.
+01:03:06 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:03:06 INFO  : 'configparams force-mem-access 1' command is executed.
+01:03:06 INFO  : Context for 'APU' is selected.
+01:03:06 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:03:06 INFO  : 'ps7_init' command is executed.
+01:03:06 INFO  : 'ps7_post_config' command is executed.
+01:03:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:03:06 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:03:06 INFO  : 'configparams force-mem-access 0' command is executed.
+01:03:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:03:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:03:07 INFO  : 'con' command is executed.
+01:03:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:03:07 INFO  : Disconnected from the channel tcfchan#23.
+01:05:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:05:22 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:05:22 INFO  : 'jtag frequency' command is executed.
+01:05:22 INFO  : Context for 'APU' is selected.
+01:05:22 INFO  : System reset is completed.
+01:05:25 INFO  : 'after 3000' command is executed.
+01:05:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:05:26 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:05:26 INFO  : Context for 'APU' is selected.
+01:05:26 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:05:26 INFO  : 'configparams force-mem-access 1' command is executed.
+01:05:26 INFO  : Context for 'APU' is selected.
+01:05:26 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:05:27 INFO  : 'ps7_init' command is executed.
+01:05:27 INFO  : 'ps7_post_config' command is executed.
+01:05:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:05:27 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:05:27 INFO  : 'configparams force-mem-access 0' command is executed.
+01:05:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:05:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:05:27 INFO  : 'con' command is executed.
+01:05:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:05:27 INFO  : Disconnected from the channel tcfchan#24.
+01:28:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:28:04 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:28:04 INFO  : 'jtag frequency' command is executed.
+01:28:04 INFO  : Context for 'APU' is selected.
+01:28:04 INFO  : System reset is completed.
+01:28:07 INFO  : 'after 3000' command is executed.
+01:28:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:28:09 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:28:09 INFO  : Context for 'APU' is selected.
+01:28:09 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:28:09 INFO  : 'configparams force-mem-access 1' command is executed.
+01:28:09 INFO  : Context for 'APU' is selected.
+01:28:09 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:28:09 INFO  : 'ps7_init' command is executed.
+01:28:09 INFO  : 'ps7_post_config' command is executed.
+01:28:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:28:09 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:28:09 INFO  : 'configparams force-mem-access 0' command is executed.
+01:28:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:28:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:28:09 INFO  : 'con' command is executed.
+01:28:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:28:09 INFO  : Disconnected from the channel tcfchan#25.
+01:33:44 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:34:18 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:34:27 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:34:52 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:37:05 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:37:19 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:40:21 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:41:45 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:41:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:41:48 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:41:48 INFO  : 'jtag frequency' command is executed.
+01:41:48 INFO  : Context for 'APU' is selected.
+01:41:48 INFO  : System reset is completed.
+01:41:51 INFO  : 'after 3000' command is executed.
+01:41:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:41:53 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:41:53 INFO  : Context for 'APU' is selected.
+01:41:53 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:41:53 INFO  : 'configparams force-mem-access 1' command is executed.
+01:41:53 INFO  : Context for 'APU' is selected.
+01:41:53 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:41:53 INFO  : 'ps7_init' command is executed.
+01:41:53 INFO  : 'ps7_post_config' command is executed.
+01:41:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:41:53 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:41:53 INFO  : 'configparams force-mem-access 0' command is executed.
+01:41:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:41:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:41:53 INFO  : 'con' command is executed.
+01:41:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:41:53 INFO  : Disconnected from the channel tcfchan#26.
+01:43:50 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:43:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:43:54 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:43:54 INFO  : 'jtag frequency' command is executed.
+01:43:54 INFO  : Context for 'APU' is selected.
+01:43:54 INFO  : System reset is completed.
+01:43:57 INFO  : 'after 3000' command is executed.
+01:43:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:43:58 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:43:58 INFO  : Context for 'APU' is selected.
+01:43:58 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:43:58 INFO  : 'configparams force-mem-access 1' command is executed.
+01:43:58 INFO  : Context for 'APU' is selected.
+01:43:58 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:43:58 INFO  : 'ps7_init' command is executed.
+01:43:58 INFO  : 'ps7_post_config' command is executed.
+01:43:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:43:59 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:43:59 INFO  : 'configparams force-mem-access 0' command is executed.
+01:43:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:43:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:43:59 INFO  : 'con' command is executed.
+01:43:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:43:59 INFO  : Disconnected from the channel tcfchan#27.
+01:45:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:45:11 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:45:11 INFO  : 'jtag frequency' command is executed.
+01:45:11 INFO  : Context for 'APU' is selected.
+01:45:11 INFO  : System reset is completed.
+01:45:13 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:45:14 INFO  : 'after 3000' command is executed.
+01:45:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:45:15 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:45:15 INFO  : Context for 'APU' is selected.
+01:45:15 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:45:15 INFO  : 'configparams force-mem-access 1' command is executed.
+01:45:15 INFO  : Context for 'APU' is selected.
+01:45:15 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:45:16 INFO  : 'ps7_init' command is executed.
+01:45:16 INFO  : 'ps7_post_config' command is executed.
+01:45:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:45:16 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:45:16 INFO  : 'configparams force-mem-access 0' command is executed.
+01:45:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:45:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:45:16 INFO  : 'con' command is executed.
+01:45:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:45:16 INFO  : Disconnected from the channel tcfchan#28.
+01:45:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:45:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:45:18 INFO  : 'jtag frequency' command is executed.
+01:45:18 INFO  : Context for 'APU' is selected.
+01:45:18 INFO  : System reset is completed.
+01:45:21 INFO  : 'after 3000' command is executed.
+01:45:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:45:22 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:45:22 INFO  : Context for 'APU' is selected.
+01:45:22 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:45:22 INFO  : 'configparams force-mem-access 1' command is executed.
+01:45:22 INFO  : Context for 'APU' is selected.
+01:45:22 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:45:22 INFO  : 'ps7_init' command is executed.
+01:45:22 INFO  : 'ps7_post_config' command is executed.
+01:45:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:45:22 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:45:22 INFO  : 'configparams force-mem-access 0' command is executed.
+01:45:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:45:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:45:23 INFO  : 'con' command is executed.
+01:45:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:45:23 INFO  : Disconnected from the channel tcfchan#29.
+01:46:30 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:46:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:46:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:46:35 INFO  : 'jtag frequency' command is executed.
+01:46:35 INFO  : Context for 'APU' is selected.
+01:46:35 INFO  : System reset is completed.
+01:46:38 INFO  : 'after 3000' command is executed.
+01:46:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:46:39 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:46:39 INFO  : Context for 'APU' is selected.
+01:46:39 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:46:39 INFO  : 'configparams force-mem-access 1' command is executed.
+01:46:39 INFO  : Context for 'APU' is selected.
+01:46:39 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:46:40 INFO  : 'ps7_init' command is executed.
+01:46:40 INFO  : 'ps7_post_config' command is executed.
+01:46:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:46:40 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:46:40 INFO  : 'configparams force-mem-access 0' command is executed.
+01:46:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:46:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:46:40 INFO  : 'con' command is executed.
+01:46:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:46:40 INFO  : Disconnected from the channel tcfchan#30.
+01:47:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:47:31 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:47:31 INFO  : 'jtag frequency' command is executed.
+01:47:31 INFO  : Context for 'APU' is selected.
+01:47:31 INFO  : System reset is completed.
+01:47:34 INFO  : 'after 3000' command is executed.
+01:47:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:47:35 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:47:35 INFO  : Context for 'APU' is selected.
+01:47:35 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:47:35 INFO  : 'configparams force-mem-access 1' command is executed.
+01:47:35 INFO  : Context for 'APU' is selected.
+01:47:35 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:47:36 INFO  : 'ps7_init' command is executed.
+01:47:36 INFO  : 'ps7_post_config' command is executed.
+01:47:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:47:36 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:47:36 INFO  : 'configparams force-mem-access 0' command is executed.
+01:47:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:47:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:47:36 INFO  : 'con' command is executed.
+01:47:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:47:36 INFO  : Disconnected from the channel tcfchan#31.
+01:49:29 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:49:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:49:33 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:49:33 INFO  : 'jtag frequency' command is executed.
+01:49:33 INFO  : Context for 'APU' is selected.
+01:49:33 INFO  : System reset is completed.
+01:49:36 INFO  : 'after 3000' command is executed.
+01:49:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:49:37 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:49:37 INFO  : Context for 'APU' is selected.
+01:49:37 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:49:37 INFO  : 'configparams force-mem-access 1' command is executed.
+01:49:37 INFO  : Context for 'APU' is selected.
+01:49:37 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:49:37 INFO  : 'ps7_init' command is executed.
+01:49:37 INFO  : 'ps7_post_config' command is executed.
+01:49:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:49:37 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:49:37 INFO  : 'configparams force-mem-access 0' command is executed.
+01:49:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:49:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:49:37 INFO  : 'con' command is executed.
+01:49:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:49:37 INFO  : Disconnected from the channel tcfchan#32.
+01:53:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:53:06 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:53:06 INFO  : 'jtag frequency' command is executed.
+01:53:06 INFO  : Context for 'APU' is selected.
+01:53:06 INFO  : System reset is completed.
+01:53:09 INFO  : 'after 3000' command is executed.
+01:53:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:53:11 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:53:11 INFO  : Context for 'APU' is selected.
+01:53:11 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:53:11 INFO  : 'configparams force-mem-access 1' command is executed.
+01:53:11 INFO  : Context for 'APU' is selected.
+01:53:11 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:53:11 INFO  : 'ps7_init' command is executed.
+01:53:11 INFO  : 'ps7_post_config' command is executed.
+01:53:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:53:11 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:53:11 INFO  : 'configparams force-mem-access 0' command is executed.
+01:53:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:53:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:53:11 INFO  : 'con' command is executed.
+01:53:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:53:11 INFO  : Disconnected from the channel tcfchan#33.
+01:55:19 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:55:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:55:22 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:55:22 INFO  : 'jtag frequency' command is executed.
+01:55:22 INFO  : Context for 'APU' is selected.
+01:55:22 INFO  : System reset is completed.
+01:55:25 INFO  : 'after 3000' command is executed.
+01:55:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:55:26 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:55:27 INFO  : Context for 'APU' is selected.
+01:55:27 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:55:27 INFO  : 'configparams force-mem-access 1' command is executed.
+01:55:27 INFO  : Context for 'APU' is selected.
+01:55:27 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:55:27 INFO  : 'ps7_init' command is executed.
+01:55:27 INFO  : 'ps7_post_config' command is executed.
+01:55:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:55:27 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:55:27 INFO  : 'configparams force-mem-access 0' command is executed.
+01:55:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:55:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:55:27 INFO  : 'con' command is executed.
+01:55:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:55:27 INFO  : Disconnected from the channel tcfchan#34.
+01:58:50 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+01:58:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:58:53 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+01:58:53 INFO  : 'jtag frequency' command is executed.
+01:58:53 INFO  : Context for 'APU' is selected.
+01:58:53 INFO  : System reset is completed.
+01:58:56 INFO  : 'after 3000' command is executed.
+01:58:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+01:58:57 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+01:58:57 INFO  : Context for 'APU' is selected.
+01:58:57 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+01:58:57 INFO  : 'configparams force-mem-access 1' command is executed.
+01:58:57 INFO  : Context for 'APU' is selected.
+01:58:57 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+01:58:58 INFO  : 'ps7_init' command is executed.
+01:58:58 INFO  : 'ps7_post_config' command is executed.
+01:58:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:58:58 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:58:58 INFO  : 'configparams force-mem-access 0' command is executed.
+01:58:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:58:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:58:58 INFO  : 'con' command is executed.
+01:58:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:58:58 INFO  : Disconnected from the channel tcfchan#35.
+02:01:03 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:01:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:01:06 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:01:06 INFO  : 'jtag frequency' command is executed.
+02:01:06 INFO  : Context for 'APU' is selected.
+02:01:06 INFO  : System reset is completed.
+02:01:09 INFO  : 'after 3000' command is executed.
+02:01:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:01:10 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:01:10 INFO  : Context for 'APU' is selected.
+02:01:10 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:01:10 INFO  : 'configparams force-mem-access 1' command is executed.
+02:01:10 INFO  : Context for 'APU' is selected.
+02:01:10 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:01:10 INFO  : 'ps7_init' command is executed.
+02:01:11 INFO  : 'ps7_post_config' command is executed.
+02:01:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:01:11 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:01:11 INFO  : 'configparams force-mem-access 0' command is executed.
+02:01:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:01:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:01:11 INFO  : 'con' command is executed.
+02:01:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:01:11 INFO  : Disconnected from the channel tcfchan#36.
+02:02:53 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:05:38 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:05:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:05:41 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:05:41 INFO  : 'jtag frequency' command is executed.
+02:05:41 INFO  : Context for 'APU' is selected.
+02:05:41 INFO  : System reset is completed.
+02:05:44 INFO  : 'after 3000' command is executed.
+02:05:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:05:45 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:05:45 INFO  : Context for 'APU' is selected.
+02:05:45 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:05:45 INFO  : 'configparams force-mem-access 1' command is executed.
+02:05:45 INFO  : Context for 'APU' is selected.
+02:05:45 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:05:45 INFO  : 'ps7_init' command is executed.
+02:05:45 INFO  : 'ps7_post_config' command is executed.
+02:05:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:05:46 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:05:46 INFO  : 'configparams force-mem-access 0' command is executed.
+02:05:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:05:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:05:46 INFO  : 'con' command is executed.
+02:05:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:05:46 INFO  : Disconnected from the channel tcfchan#37.
+02:10:11 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:17:03 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:17:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:17:07 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:17:07 INFO  : 'jtag frequency' command is executed.
+02:17:07 INFO  : Context for 'APU' is selected.
+02:17:07 INFO  : System reset is completed.
+02:17:10 INFO  : 'after 3000' command is executed.
+02:17:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:17:12 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:17:12 INFO  : Context for 'APU' is selected.
+02:17:12 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:17:12 INFO  : 'configparams force-mem-access 1' command is executed.
+02:17:12 INFO  : Context for 'APU' is selected.
+02:17:12 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:17:12 INFO  : 'ps7_init' command is executed.
+02:17:12 INFO  : 'ps7_post_config' command is executed.
+02:17:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:17:12 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:17:12 INFO  : 'configparams force-mem-access 0' command is executed.
+02:17:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:17:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:17:12 INFO  : 'con' command is executed.
+02:17:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:17:12 INFO  : Disconnected from the channel tcfchan#38.
+02:18:31 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:18:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:18:35 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:18:35 INFO  : 'jtag frequency' command is executed.
+02:18:35 INFO  : Context for 'APU' is selected.
+02:18:35 INFO  : System reset is completed.
+02:18:38 INFO  : 'after 3000' command is executed.
+02:18:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:18:40 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:18:40 INFO  : Context for 'APU' is selected.
+02:18:40 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:18:40 INFO  : 'configparams force-mem-access 1' command is executed.
+02:18:40 INFO  : Context for 'APU' is selected.
+02:18:40 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:18:40 INFO  : 'ps7_init' command is executed.
+02:18:40 INFO  : 'ps7_post_config' command is executed.
+02:18:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:18:40 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:18:40 INFO  : 'configparams force-mem-access 0' command is executed.
+02:18:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:18:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:18:40 INFO  : 'con' command is executed.
+02:18:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:18:40 INFO  : Disconnected from the channel tcfchan#39.
+02:21:47 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:21:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:21:52 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:21:52 INFO  : 'jtag frequency' command is executed.
+02:21:52 INFO  : Context for 'APU' is selected.
+02:21:52 INFO  : System reset is completed.
+02:21:55 INFO  : 'after 3000' command is executed.
+02:21:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:21:56 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:21:56 INFO  : Context for 'APU' is selected.
+02:21:56 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:21:56 INFO  : 'configparams force-mem-access 1' command is executed.
+02:21:56 INFO  : Context for 'APU' is selected.
+02:21:56 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:21:57 INFO  : 'ps7_init' command is executed.
+02:21:57 INFO  : 'ps7_post_config' command is executed.
+02:21:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:21:57 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:21:57 INFO  : 'configparams force-mem-access 0' command is executed.
+02:21:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:21:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:21:57 INFO  : 'con' command is executed.
+02:21:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:21:57 INFO  : Disconnected from the channel tcfchan#40.
+02:26:26 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:26:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:26:29 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:26:29 INFO  : 'jtag frequency' command is executed.
+02:26:29 INFO  : Context for 'APU' is selected.
+02:26:29 INFO  : System reset is completed.
+02:26:32 INFO  : 'after 3000' command is executed.
+02:26:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:26:34 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:26:34 INFO  : Context for 'APU' is selected.
+02:26:34 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:26:34 INFO  : 'configparams force-mem-access 1' command is executed.
+02:26:34 INFO  : Context for 'APU' is selected.
+02:26:34 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:26:34 INFO  : 'ps7_init' command is executed.
+02:26:34 INFO  : 'ps7_post_config' command is executed.
+02:26:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:26:34 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:26:34 INFO  : 'configparams force-mem-access 0' command is executed.
+02:26:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:26:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:26:34 INFO  : 'con' command is executed.
+02:26:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:26:34 INFO  : Disconnected from the channel tcfchan#41.
+02:29:17 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:29:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:29:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:29:18 INFO  : 'jtag frequency' command is executed.
+02:29:18 INFO  : Context for 'APU' is selected.
+02:29:18 INFO  : System reset is completed.
+02:29:21 INFO  : 'after 3000' command is executed.
+02:29:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:29:23 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:29:23 INFO  : Context for 'APU' is selected.
+02:29:23 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:29:23 INFO  : 'configparams force-mem-access 1' command is executed.
+02:29:23 INFO  : Context for 'APU' is selected.
+02:29:23 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:29:23 INFO  : 'ps7_init' command is executed.
+02:29:23 INFO  : 'ps7_post_config' command is executed.
+02:29:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:29:23 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:29:23 INFO  : 'configparams force-mem-access 0' command is executed.
+02:29:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:29:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:29:23 INFO  : 'con' command is executed.
+02:29:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:29:23 INFO  : Disconnected from the channel tcfchan#42.
+02:30:50 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:31:36 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:31:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:31:40 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:31:40 INFO  : 'jtag frequency' command is executed.
+02:31:40 INFO  : Context for 'APU' is selected.
+02:31:40 INFO  : System reset is completed.
+02:31:43 INFO  : 'after 3000' command is executed.
+02:31:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:31:45 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:31:45 INFO  : Context for 'APU' is selected.
+02:31:45 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:31:45 INFO  : 'configparams force-mem-access 1' command is executed.
+02:31:45 INFO  : Context for 'APU' is selected.
+02:31:45 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:31:45 INFO  : 'ps7_init' command is executed.
+02:31:45 INFO  : 'ps7_post_config' command is executed.
+02:31:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:31:45 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:31:45 INFO  : 'configparams force-mem-access 0' command is executed.
+02:31:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:31:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:31:45 INFO  : 'con' command is executed.
+02:31:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:31:45 INFO  : Disconnected from the channel tcfchan#43.
+02:37:10 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:37:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:37:13 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:37:13 INFO  : 'jtag frequency' command is executed.
+02:37:13 INFO  : Context for 'APU' is selected.
+02:37:13 INFO  : System reset is completed.
+02:37:16 INFO  : 'after 3000' command is executed.
+02:37:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:37:18 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:37:18 INFO  : Context for 'APU' is selected.
+02:37:18 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:37:18 INFO  : 'configparams force-mem-access 1' command is executed.
+02:37:18 INFO  : Context for 'APU' is selected.
+02:37:18 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:37:18 INFO  : 'ps7_init' command is executed.
+02:37:18 INFO  : 'ps7_post_config' command is executed.
+02:37:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:37:18 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:37:18 INFO  : 'configparams force-mem-access 0' command is executed.
+02:37:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:37:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:37:18 INFO  : 'con' command is executed.
+02:37:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:37:18 INFO  : Disconnected from the channel tcfchan#44.
+02:38:27 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:38:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:38:30 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:38:30 INFO  : 'jtag frequency' command is executed.
+02:38:30 INFO  : Context for 'APU' is selected.
+02:38:30 INFO  : System reset is completed.
+02:38:33 INFO  : 'after 3000' command is executed.
+02:38:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:38:34 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:38:34 INFO  : Context for 'APU' is selected.
+02:38:34 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:38:34 INFO  : 'configparams force-mem-access 1' command is executed.
+02:38:34 INFO  : Context for 'APU' is selected.
+02:38:34 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:38:34 INFO  : 'ps7_init' command is executed.
+02:38:34 INFO  : 'ps7_post_config' command is executed.
+02:38:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:38:35 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:38:35 INFO  : 'configparams force-mem-access 0' command is executed.
+02:38:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:38:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:38:35 INFO  : 'con' command is executed.
+02:38:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:38:35 INFO  : Disconnected from the channel tcfchan#45.
+02:41:41 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:41:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:41:44 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:41:44 INFO  : 'jtag frequency' command is executed.
+02:41:44 INFO  : Context for 'APU' is selected.
+02:41:44 INFO  : System reset is completed.
+02:41:47 INFO  : 'after 3000' command is executed.
+02:41:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:41:48 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:41:48 INFO  : Context for 'APU' is selected.
+02:41:48 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:41:48 INFO  : 'configparams force-mem-access 1' command is executed.
+02:41:48 INFO  : Context for 'APU' is selected.
+02:41:48 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:41:48 INFO  : 'ps7_init' command is executed.
+02:41:48 INFO  : 'ps7_post_config' command is executed.
+02:41:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:41:49 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:41:49 INFO  : 'configparams force-mem-access 0' command is executed.
+02:41:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:41:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:41:49 INFO  : 'con' command is executed.
+02:41:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:41:49 INFO  : Disconnected from the channel tcfchan#46.
+02:49:05 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:49:19 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:49:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:49:22 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:49:22 INFO  : 'jtag frequency' command is executed.
+02:49:22 INFO  : Context for 'APU' is selected.
+02:49:22 INFO  : System reset is completed.
+02:49:25 INFO  : 'after 3000' command is executed.
+02:49:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:49:26 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:49:26 INFO  : Context for 'APU' is selected.
+02:49:26 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:49:26 INFO  : 'configparams force-mem-access 1' command is executed.
+02:49:26 INFO  : Context for 'APU' is selected.
+02:49:26 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:49:26 INFO  : 'ps7_init' command is executed.
+02:49:26 INFO  : 'ps7_post_config' command is executed.
+02:49:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:26 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:49:26 INFO  : 'configparams force-mem-access 0' command is executed.
+02:49:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:49:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:49:27 INFO  : 'con' command is executed.
+02:49:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:49:27 INFO  : Disconnected from the channel tcfchan#47.
+02:56:30 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:56:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:56:33 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:56:33 INFO  : 'jtag frequency' command is executed.
+02:56:33 INFO  : Context for 'APU' is selected.
+02:56:33 INFO  : System reset is completed.
+02:56:36 INFO  : 'after 3000' command is executed.
+02:56:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:56:38 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:56:38 INFO  : Context for 'APU' is selected.
+02:56:38 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:56:38 INFO  : 'configparams force-mem-access 1' command is executed.
+02:56:38 INFO  : Context for 'APU' is selected.
+02:56:38 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:56:38 INFO  : 'ps7_init' command is executed.
+02:56:38 INFO  : 'ps7_post_config' command is executed.
+02:56:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:56:38 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:56:38 INFO  : 'configparams force-mem-access 0' command is executed.
+02:56:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:56:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:56:38 INFO  : 'con' command is executed.
+02:56:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:56:38 INFO  : Disconnected from the channel tcfchan#48.
+02:58:58 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+02:58:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:58:59 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+02:58:59 INFO  : 'jtag frequency' command is executed.
+02:58:59 INFO  : Context for 'APU' is selected.
+02:58:59 INFO  : System reset is completed.
+02:59:02 INFO  : 'after 3000' command is executed.
+02:59:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+02:59:04 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+02:59:04 INFO  : Context for 'APU' is selected.
+02:59:04 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+02:59:04 INFO  : 'configparams force-mem-access 1' command is executed.
+02:59:04 INFO  : Context for 'APU' is selected.
+02:59:04 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+02:59:04 INFO  : 'ps7_init' command is executed.
+02:59:04 INFO  : 'ps7_post_config' command is executed.
+02:59:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:59:04 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:59:04 INFO  : 'configparams force-mem-access 0' command is executed.
+02:59:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:59:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:59:04 INFO  : 'con' command is executed.
+02:59:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+02:59:04 INFO  : Disconnected from the channel tcfchan#49.
+03:01:16 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+03:04:54 INFO  : Checking for BSP changes to sync application flags for project 'OLEDs'...
+03:04:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:04:56 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+03:04:56 INFO  : 'jtag frequency' command is executed.
+03:04:56 INFO  : Context for 'APU' is selected.
+03:04:56 INFO  : System reset is completed.
+03:04:59 INFO  : 'after 3000' command is executed.
+03:04:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+03:05:00 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+03:05:00 INFO  : Context for 'APU' is selected.
+03:05:00 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+03:05:00 INFO  : 'configparams force-mem-access 1' command is executed.
+03:05:00 INFO  : Context for 'APU' is selected.
+03:05:00 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+03:05:01 INFO  : 'ps7_init' command is executed.
+03:05:01 INFO  : 'ps7_post_config' command is executed.
+03:05:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:05:01 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:05:01 INFO  : 'configparams force-mem-access 0' command is executed.
+03:05:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:05:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:05:01 INFO  : 'con' command is executed.
+03:05:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:05:01 INFO  : Disconnected from the channel tcfchan#50.
+03:05:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:05:11 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+03:05:11 INFO  : 'jtag frequency' command is executed.
+03:05:11 INFO  : Context for 'APU' is selected.
+03:05:11 INFO  : System reset is completed.
+03:05:14 INFO  : 'after 3000' command is executed.
+03:05:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+03:05:16 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+03:05:16 INFO  : Context for 'APU' is selected.
+03:05:16 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+03:05:16 INFO  : 'configparams force-mem-access 1' command is executed.
+03:05:16 INFO  : Context for 'APU' is selected.
+03:05:16 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+03:05:16 INFO  : 'ps7_init' command is executed.
+03:05:16 INFO  : 'ps7_post_config' command is executed.
+03:05:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:05:16 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:05:16 INFO  : 'configparams force-mem-access 0' command is executed.
+03:05:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:05:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:05:16 INFO  : 'con' command is executed.
+03:05:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:05:16 INFO  : Disconnected from the channel tcfchan#51.
+03:06:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:06:42 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+03:06:42 INFO  : 'jtag frequency' command is executed.
+03:06:42 INFO  : Context for 'APU' is selected.
+03:06:42 INFO  : System reset is completed.
+03:06:45 INFO  : 'after 3000' command is executed.
+03:06:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+03:06:46 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+03:06:46 INFO  : Context for 'APU' is selected.
+03:06:46 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+03:06:46 INFO  : 'configparams force-mem-access 1' command is executed.
+03:06:46 INFO  : Context for 'APU' is selected.
+03:06:46 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+03:06:46 INFO  : 'ps7_init' command is executed.
+03:06:46 INFO  : 'ps7_post_config' command is executed.
+03:06:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:06:46 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:06:46 INFO  : 'configparams force-mem-access 0' command is executed.
+03:06:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:06:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:06:47 INFO  : 'con' command is executed.
+03:06:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+03:06:47 INFO  : Disconnected from the channel tcfchan#52.
+05:48:15 INFO  : Launching XSCT server: xsct -n  -interactive /home/ozratzon/test_software/temp_xsdb_launch_script.tcl
+05:48:20 INFO  : Platform repository initialization has completed.
+05:48:20 INFO  : Registering command handlers for Vitis TCF services
+05:48:22 INFO  : XSCT server has started successfully.
+05:48:24 INFO  : Successfully done setting XSCT server connection channel  
+05:48:24 INFO  : plnx-install-location is set to ''
+05:48:24 INFO  : Successfully done query RDI_DATADIR 
+05:48:24 INFO  : Successfully done setting workspace for the tool. 
+06:36:25 INFO  : Result from executing command 'getProjects': OLED_Design_wrapper
+06:36:25 INFO  : Result from executing command 'getPlatforms': OLED_Design_wrapper|/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/OLED_Design_wrapper.xpfm
+07:01:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+07:01:33 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+07:01:33 INFO  : 'jtag frequency' command is executed.
+07:01:33 INFO  : Context for 'APU' is selected.
+07:01:33 INFO  : System reset is completed.
+07:01:36 INFO  : 'after 3000' command is executed.
+07:01:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+07:01:37 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+07:01:37 INFO  : Context for 'APU' is selected.
+07:01:37 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+07:01:37 INFO  : 'configparams force-mem-access 1' command is executed.
+07:01:37 INFO  : Context for 'APU' is selected.
+07:01:37 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+07:01:38 INFO  : 'ps7_init' command is executed.
+07:01:38 INFO  : 'ps7_post_config' command is executed.
+07:01:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:01:38 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+07:01:38 INFO  : 'configparams force-mem-access 0' command is executed.
+07:01:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+07:01:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:01:38 INFO  : 'con' command is executed.
+07:01:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+07:01:38 INFO  : Disconnected from the channel tcfchan#2.
+07:02:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+07:02:37 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+07:02:37 INFO  : 'jtag frequency' command is executed.
+07:02:37 INFO  : Context for 'APU' is selected.
+07:02:37 INFO  : System reset is completed.
+07:02:40 INFO  : 'after 3000' command is executed.
+07:02:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+07:02:41 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+07:02:41 INFO  : Context for 'APU' is selected.
+07:02:41 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+07:02:41 INFO  : 'configparams force-mem-access 1' command is executed.
+07:02:41 INFO  : Context for 'APU' is selected.
+07:02:41 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+07:02:41 INFO  : 'ps7_init' command is executed.
+07:02:41 INFO  : 'ps7_post_config' command is executed.
+07:02:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:02:41 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+07:02:41 INFO  : 'configparams force-mem-access 0' command is executed.
+07:02:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+07:02:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:02:41 INFO  : 'con' command is executed.
+07:02:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+07:02:41 INFO  : Disconnected from the channel tcfchan#3.
+07:03:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+07:03:49 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E4A' is selected.
+07:03:49 INFO  : 'jtag frequency' command is executed.
+07:03:49 INFO  : Context for 'APU' is selected.
+07:03:49 INFO  : System reset is completed.
+07:03:52 INFO  : 'after 3000' command is executed.
+07:03:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}' command is executed.
+07:03:53 INFO  : Device configured successfully with "/home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit"
+07:03:53 INFO  : Context for 'APU' is selected.
+07:03:53 INFO  : Hardware design and registers information is loaded from '/home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa'.
+07:03:53 INFO  : 'configparams force-mem-access 1' command is executed.
+07:03:53 INFO  : Context for 'APU' is selected.
+07:03:53 INFO  : Sourcing of '/home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl' is done.
+07:03:53 INFO  : 'ps7_init' command is executed.
+07:03:53 INFO  : 'ps7_post_config' command is executed.
+07:03:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:03:54 INFO  : The application '/home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+07:03:54 INFO  : 'configparams force-mem-access 0' command is executed.
+07:03:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E4A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E4A-13722093-0"}
+fpga -file /home/ozratzon/test_software/OLEDs/_ide/bitstream/OLED_Design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/ozratzon/test_software/OLED_Design_wrapper/export/OLED_Design_wrapper/hw/OLED_Design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/ozratzon/test_software/OLEDs/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/ozratzon/test_software/OLEDs/Debug/OLEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+07:03:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+07:03:54 INFO  : 'con' command is executed.
+07:03:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+07:03:54 INFO  : Disconnected from the channel tcfchan#4.

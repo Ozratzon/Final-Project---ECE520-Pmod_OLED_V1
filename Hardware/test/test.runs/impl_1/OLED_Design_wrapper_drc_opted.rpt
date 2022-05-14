@@ -1,0 +1,46 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri May 13 22:01:40 2022
+| Host         : ozratzon-730QCJ-730QCR running 64-bit Ubuntu 20.04.4 LTS
+| Command      : report_drc -file OLED_Design_wrapper_drc_opted.rpt -pb OLED_Design_wrapper_drc_opted.pb -rpx OLED_Design_wrapper_drc_opted.rpx
+| Design       : OLED_Design_wrapper
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 2
++--------+----------+--------------------------+------------+
+| Rule   | Severity | Description              | Violations |
++--------+----------+--------------------------+------------+
+| BUFC-1 | Warning  | Input Buffer Connections | 2          |
++--------+----------+--------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+BUFC-1#1 Warning
+Input Buffer Connections  
+Input buffer jc_pin1_iobuf/IBUF (in jc_pin1_iobuf macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+BUFC-1#2 Warning
+Input Buffer Connections  
+Input buffer jc_pin4_iobuf/IBUF (in jc_pin4_iobuf macro) has no loads. It is recommended to have an input buffer drive an internal load.
+Related violations: <none>
+
+
